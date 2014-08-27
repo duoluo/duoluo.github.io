@@ -4,7 +4,7 @@
   <title><![CDATA[Wright's Blog]]></title>
   <link href="duoluo.github.io/atom.xml" rel="self"/>
   <link href="duoluo.github.io/"/>
-  <updated>2014-08-27T14:37:30+08:00</updated>
+  <updated>2014-08-27T14:56:20+08:00</updated>
   <id>duoluo.github.io/</id>
   <author>
     <name><![CDATA[Wright]]></name>
@@ -14,11 +14,27 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Title]]></title>
-    <link href="duoluo.github.io/blog/2014/08/27/title/"/>
-    <updated>2014-08-27T10:19:24+08:00</updated>
-    <id>duoluo.github.io/blog/2014/08/27/title</id>
+    <title type="html"><![CDATA[New Post]]></title>
+    <link href="duoluo.github.io/blog/2014/08/27/new-post/"/>
+    <updated>2014-08-27T14:56:08+08:00</updated>
+    <id>duoluo.github.io/blog/2014/08/27/new-post</id>
     <content type="html"><![CDATA[
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Title]]></title>
+    <link href="duoluo.github.io/blog/2014/08/27/%E6%B5%8B%E8%AF%95blog/"/>
+    <updated>2014-08-27T10:19:24+08:00</updated>
+    <id>duoluo.github.io/blog/2014/08/27/测试blog</id>
+    <content type="html"><![CDATA[<p>几种消息传递机制首先我们来看看每种机制的具体特点。在这个基础上，下一节我们会画一个流程图来帮我们在具体情况下正确选择应该使用的机制。最后，我们会介绍一些苹果框架里的例子并且解释为什么在那些用例中会选择这样的机制。</p>
+
+<p>KVOKVO 是提供对象属性被改变时的通知的机制。KVO 的实现在 Foundation 中，很多基于 Foundation 的框架都依赖它。想要了解更多有关 KVO 的最佳实践，请阅读本期 Daniel 写的 KVO 和 KVC 文章。
+如果只对某个对象的值的改变感兴趣的话，就可以使用 KVO 消息传递。不过有一些前提：第一，接收者（接收对象改变的通知的对象）需要知道发送者 （值会改变的对象）；第二，接收者需要知道发送者的生命周期，因为它需要在发送者被销毁前注销观察者身份。如果这两个要去符合的话，这个消息传递机制可以一对多（多个观察者可以注册观察同一个对象的变化）
+几种消息传递机制首先我们来看看每种机制的具体特点。在这个基础上，下一节我们会画一个流程图来帮我们在具体情况下正确选择应该使用的机制。最后，我们会介绍一些苹果框架里的例子并且解释为什么在那些用例中会选择这样的机制。</p>
+
+<p>KVOKVO 是提供对象属性被改变时的通知的机制。KVO 的实现在 Foundation 中，很多基于 Foundation 的框架都依赖它。想要了解更多有关 KVO 的最佳实践，请阅读本期 Daniel 写的 KVO 和 KVC 文章。
+如果只对某个对象的值的改变感兴趣的话，就可以使用 KVO 消息传递。不过有一些前提：第一，接收者（接收对象改变的通知的对象）需要知道发送者 （值会改变的对象）；第二，接收者需要知道发送者的生命周期，因为它需要在发送者被销毁前注销观察者身份。如果这两个要去符合的话，这个消息传递机制可以一对多（多个观察者可以注册观察同一个对象的变化）</p>
 ]]></content>
   </entry>
   

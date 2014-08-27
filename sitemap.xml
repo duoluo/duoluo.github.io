@@ -3,7 +3,13 @@
   
   
   <url>
-    <loc>duoluo.github.io/blog/2014/08/27/title/</loc>
+    <loc>duoluo.github.io/blog/2014/08/27/new-post/</loc>
+    <lastmod>2014-08-27T14:56:08+08:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>duoluo.github.io/blog/2014/08/27/%E6%B5%8B%E8%AF%95blog/</loc>
     <lastmod>2014-08-27T10:19:24+08:00</lastmod>
     <priority>0.8</priority>
   </url>
@@ -11,14 +17,14 @@
   
   <url>
     <loc>duoluo.github.io/blog/archives/</loc>
-    <lastmod>2014-08-27T14:37:30+08:00</lastmod>
+    <lastmod>2014-08-27T14:56:20+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>duoluo.github.io/</loc>
-    <lastmod>2014-08-27T14:37:30+08:00</lastmod>
+    <lastmod>2014-08-27T14:56:20+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>

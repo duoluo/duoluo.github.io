@@ -72,7 +72,36 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2014/08/27/title/">Title</a></h1>
+      <h1 class="entry-title"><a href="/blog/2014/08/27/new-post/">New Post</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-08-27T14:56:08+08:00'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>27</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>2:56 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/08/27/%E6%B5%8B%E8%AF%95blog/">Title</a></h1>
     
     
       <p class="meta">
@@ -88,7 +117,14 @@
   </header>
 
 
-  <div class="entry-content">
+  <div class="entry-content"><p>几种消息传递机制首先我们来看看每种机制的具体特点。在这个基础上，下一节我们会画一个流程图来帮我们在具体情况下正确选择应该使用的机制。最后，我们会介绍一些苹果框架里的例子并且解释为什么在那些用例中会选择这样的机制。</p>
+
+<p>KVOKVO 是提供对象属性被改变时的通知的机制。KVO 的实现在 Foundation 中，很多基于 Foundation 的框架都依赖它。想要了解更多有关 KVO 的最佳实践，请阅读本期 Daniel 写的 KVO 和 KVC 文章。
+如果只对某个对象的值的改变感兴趣的话，就可以使用 KVO 消息传递。不过有一些前提：第一，接收者（接收对象改变的通知的对象）需要知道发送者 （值会改变的对象）；第二，接收者需要知道发送者的生命周期，因为它需要在发送者被销毁前注销观察者身份。如果这两个要去符合的话，这个消息传递机制可以一对多（多个观察者可以注册观察同一个对象的变化）
+几种消息传递机制首先我们来看看每种机制的具体特点。在这个基础上，下一节我们会画一个流程图来帮我们在具体情况下正确选择应该使用的机制。最后，我们会介绍一些苹果框架里的例子并且解释为什么在那些用例中会选择这样的机制。</p>
+
+<p>KVOKVO 是提供对象属性被改变时的通知的机制。KVO 的实现在 Foundation 中，很多基于 Foundation 的框架都依赖它。想要了解更多有关 KVO 的最佳实践，请阅读本期 Daniel 写的 KVO 和 KVC 文章。
+如果只对某个对象的值的改变感兴趣的话，就可以使用 KVO 消息传递。不过有一些前提：第一，接收者（接收对象改变的通知的对象）需要知道发送者 （值会改变的对象）；第二，接收者需要知道发送者的生命周期，因为它需要在发送者被销毁前注销观察者身份。如果这两个要去符合的话，这个消息传递机制可以一对多（多个观察者可以注册观察同一个对象的变化）</p>
 </div>
   
   
@@ -109,7 +145,11 @@
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2014/08/27/title/">Title</a>
+        <a href="/blog/2014/08/27/new-post/">New Post</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/08/27/%E6%B5%8B%E8%AF%95blog/">Title</a>
       </li>
     
   </ul>
