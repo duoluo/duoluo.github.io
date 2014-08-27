@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Wright's Blog]]></title>
-  <link href="http://duoluo.github.io/atom.xml" rel="self"/>
-  <link href="http://duoluo.github.io/"/>
-  <updated>2014-08-27T13:55:19+08:00</updated>
-  <id>http://duoluo.github.io/</id>
+  <title><![CDATA[My Octopress Blog]]></title>
+  <link href="duoluo.github.io/atom.xml" rel="self"/>
+  <link href="duoluo.github.io/"/>
+  <updated>2014-08-27T14:33:12+08:00</updated>
+  <id>duoluo.github.io/</id>
   <author>
-    <name><![CDATA[Wright]]></name>
+    <name><![CDATA[Your Name]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Title]]></title>
-    <link href="http://duoluo.github.io/blog/2014/08/27/title/"/>
+    <link href="duoluo.github.io/blog/2014/08/27/title/"/>
     <updated>2014-08-27T10:19:24+08:00</updated>
-    <id>http://duoluo.github.io/blog/2014/08/27/title</id>
+    <id>duoluo.github.io/blog/2014/08/27/title</id>
     <content type="html"><![CDATA[
 ]]></content>
   </entry>
