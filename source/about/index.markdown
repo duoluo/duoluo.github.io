@@ -6,3 +6,4 @@ comments: true
 sharing: true
 footer: true
 ---
+纵是衰人命，牛心永不灭
