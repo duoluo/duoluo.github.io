@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 生活 | Wright's Blog]]></title>
   <link href="http://duoluo.github.io/blog/categories/sheng-huo/atom.xml" rel="self"/>
   <link href="http://duoluo.github.io/"/>
-  <updated>2014-08-30T12:58:55+08:00</updated>
+  <updated>2014-08-30T13:02:11+08:00</updated>
   <id>http://duoluo.github.io/</id>
   <author>
     <name><![CDATA[Wright]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[New_start]]></title>
-    <link href="http://duoluo.github.io/blog/2014/08/30/new-start/"/>
+    <link href="http://duoluo.github.io/blog/2014/08/30/%E6%96%B0%E5%BC%80%E5%A7%8B/"/>
     <updated>2014-08-30T12:57:42+08:00</updated>
-    <id>http://duoluo.github.io/blog/2014/08/30/new-start</id>
+    <id>http://duoluo.github.io/blog/2014/08/30/新开始</id>
     <content type="html"><![CDATA[<h1>利用github+octopress搭建自己的Blog</h1>
 
 <p>说到Blog,自己也曾在CSDN和wordpress开过自己的Blog。但是，自觉文笔差劲，理解肤浅，每次想写什么的时候，最终逃不过一个结局&ndash;放弃。最近，自己在学习Ios开发，google的时候发现很多大大的blog的文章质量很高。发现他们不约而同的都使用了github+octopress。于是乎，我也产生了这个念头，一是觉得好玩，二是感觉做开发好多时候不把当时总结的知识记录下来，过后往往是飘到九霄云外了，所以决定开始自己的积累，三是希望通过bLog可以与更过的同行交流。It&rsquo;s all, 这个blog诞生了。</p>
