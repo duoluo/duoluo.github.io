@@ -4,7 +4,7 @@
   <title><![CDATA[Wright's Blog]]></title>
   <link href="http://duoluo.github.io/atom.xml" rel="self"/>
   <link href="http://duoluo.github.io/"/>
-  <updated>2014-08-30T11:27:15+08:00</updated>
+  <updated>2014-08-30T11:30:04+08:00</updated>
   <id>http://duoluo.github.io/</id>
   <author>
     <name><![CDATA[Wright]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[mac_test2]]></title>
+    <link href="http://duoluo.github.io/blog/2014/08/30/mac-test2/"/>
+    <updated>2014-08-30T11:29:53+08:00</updated>
+    <id>http://duoluo.github.io/blog/2014/08/30/mac-test2</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[mac_test1]]></title>
