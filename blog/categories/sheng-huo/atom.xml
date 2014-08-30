@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Wright's Blog]]></title>
-  <link href="http://duoluo.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: 生活 | Wright's Blog]]></title>
+  <link href="http://duoluo.github.io/blog/categories/sheng-huo/atom.xml" rel="self"/>
   <link href="http://duoluo.github.io/"/>
   <updated>2014-08-30T12:58:55+08:00</updated>
   <id>http://duoluo.github.io/</id>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[new_start]]></title>
+    <title type="html"><![CDATA[New_start]]></title>
     <link href="http://duoluo.github.io/blog/2014/08/30/new-start/"/>
     <updated>2014-08-30T12:57:42+08:00</updated>
     <id>http://duoluo.github.io/blog/2014/08/30/new-start</id>
