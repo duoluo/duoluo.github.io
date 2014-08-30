@@ -1,7 +1,0 @@
----
-layout: post
-title: "mac_test1"
-date: 2014-08-30 10:28:31 +0800
-comments: true
-categories: 
----
