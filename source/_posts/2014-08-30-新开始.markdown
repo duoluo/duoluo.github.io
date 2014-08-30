@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "new_start"
+title: "新开始"
 date: 2014-08-30 12:57:42 +0800
 comments: true
 categories: 生活
