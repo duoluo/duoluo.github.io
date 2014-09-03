@@ -7,7 +7,10 @@
 	<meta name="author" content="Wright">
 
 	
-	<meta name="description" content="生活 新开始 利用github+octopress搭建自己的Blog 说到Blog,自己也曾在CSDN和wordpress开过自己的Blog。但是，自觉文笔差劲，理解肤浅，每次想写什么的时候，最终逃不过一个结局&ndash;放弃。最近，自己在学习Ios开发， &hellip;">
+	<meta name="description" content="ios IOS内存管理简析 内存管理与引用计数 引用计数式内存管理的思考方式 引用计数式的内存管理方式主要涉及四个操作：生成对象，持有对象，释放对象，废弃对象。 内存管理的思考方式 自己生成的对象，自己持有
+非自己生成的对象，自己也能持有
+不再需要自己持有的对象时释放
+非自己持有的对象无法释放 &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -84,6 +87,179 @@
 			<div class="mid-col-container">
 				<div id="content" class="inner">
 <div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-09-01T21:43:41+08:00" data-updated="true" itemprop="datePublished"></time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/ios/'>ios</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2014/09/01/iosnei-cun-guan-li-jian-xi/" itemprop="url">IOS内存管理简析</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<h2>内存管理与引用计数</h2>
+
+<h3>引用计数式内存管理的思考方式</h3>
+
+<p>引用计数式的内存管理方式主要涉及四个操作：生成对象，持有对象，释放对象，废弃对象。</p>
+
+<ul>
+<li><p>内存管理的思考方式</p>
+
+<ul>
+<li>自己生成的对象，自己持有</li>
+<li>非自己生成的对象，自己也能持有</li>
+<li>不再需要自己持有的对象时释放</li>
+<li>非自己持有的对象无法释放</li>
+</ul>
+</li>
+</ul>
+
+
+<p>与oc中方法对应如下：</p>
+
+<pre><code>+对象操作                       +Oc方法
+生成并持有对象               alloc/new/copy/mutablecopy等方法
+持有对象                        retain方法
+释放对象                        release方法
+废弃对象                        dealloc方法
+</code></pre>
+
+<ul>
+<li>自己生成的对象，自己持有</li>
+</ul>
+
+
+<p>使用alloc, new, copy, mutablecopy开头的方法意味着自己生成的对象自己持有</p>
+
+<p>注：命名要符合驼峰命名法。</p>
+
+<ul>
+<li>非自己生成的对象，自己也能持有</li>
+</ul>
+
+
+<p>通过retain方法，非自己生成的对象也可以持有对象了。</p>
+
+<ul>
+<li>不再需要自己持有的对象时释放</li>
+</ul>
+
+
+<p>自己持有的对象，一旦不再需要，持有者有义务释放该对象。释放使用release方法。</p>
+
+<p>使用autorelease方法可以使取得的对象存在，但是自己不持有对象。</p>
+
+<ul>
+<li>无法释放非自己持有的对象</li>
+</ul>
+
+
+<p>释放非自己持有的对象会造成程序的崩溃。</p>
+
+<h3>GNUSTEP和APPLE中alloc/retain/release/dealloc的实现</h3>
+
+<p>在申请内存的时候，会在内存头部之前申请一块内存用来保存引用计数。然后分别在不同的操作的时候对这一引用计数值进行判断并作相应调整。总结如下：</p>
+
+<pre><code>1.调用alloc或是retain方法后，引用计数值加1。
+2.调用release之后，引用计数值减1
+3.引用计数值为0时，调用delloc方法废弃对象
+</code></pre>
+
+<p>苹果在实现上述方式时没有使用内存头部管理引用计数，而是使用采用了散列表管理引用计数</p>
+
+<h2>autorelease</h2>
+
+<h3>自动释放&ndash;autorelease</h3>
+
+<p>aurorelease就是自动释放，类似于c语言中的自动变量。</p>
+
+<p>autorelease的具体使用方法：</p>
+
+<pre><code>1，生成并持有NSAutoreleasePool对象
+2，调用已分配对象的autorelease实例方法
+3，废弃NSAutoreleasePool对象
+</code></pre>
+
+<p>在Cocoa框架中，相当于程序主循环的NSRunloop或者在其他程序可运行的地方，对NSAutoreleasePool对象进行生成，持有和废弃处理。</p>
+
+<h2>ARC规则</h2>
+
+<h3>所有权修饰符：</h3>
+
+<ul>
+<li>_strong修饰符</li>
+<li>_weak修饰符</li>
+<li>_unsafe_unretained修饰符</li>
+<li>_autoreleasing修饰符</li>
+</ul>
+
+
+<h4>_strong修饰符</h4>
+
+<p><em>strong修饰符是id类型和对象类型默认的所有权修饰符。附有</em>strong修饰符的变量在超出其变量作用域时，释放其被赋予的对象。<em>strong修饰符表示对对象的“强引用”，持有强引用的变量在超出其作用域时被放弃，随着强引用的失效，引用的对象会随之释放。通过</em>strong修饰符，不必再次键入retain或者release，就完美的满足了“引用计数式内存管理的思考方式”。</p>
+
+<p>注：id类型和对象类型的所有权修饰符默认为_strong修饰符。</p>
+
+<h4>_weak修饰符</h4>
+
+<p>如果仅使用<em>strong修饰符会造成“循环引用”的问题，这个时候就用到了</em>weak。带有<em>weak修饰符的变量不持有对象，所以在超出其变量作用域时，对象即被释放。</em>weak的另一个优点是，在持有某对象的弱引用时，若该对象被释放，则此弱引用将自动失效且处于nil被赋值状态。</p>
+
+<h4>_unsafe_unretained修饰符</h4>
+
+<p>在ios5以下版本中无法使用<em>weak，所以</em>unsafe_unretained成为替代品。但是<em>unsafe_unretained不保证最后的对象被释放，且处于nil被赋值状态。所以赋值给附有</em>unsafe_unretained修饰符变量的对象在使用时，要确保它存在。</p>
+
+<h4>_autoreleasing修饰符</h4>
+
+<p>在ARC有效时，用“@autoreleasepool块”来代替“NSAutoreleasePool”。</p>
+
+<p>编译器会检查方法名是否以alloc/new/copy/mutableCopy开始，如果不是则自动将返回值的对象注册到autoreleasepool(注：init返回值的对象不注册到autoreleasepool)。在使用附有<em>weak修饰符的变量时必须访问注册到autoreleasepool的对象，因为</em>weak修饰符持有对象的弱引用，在访问引用对象的过程中，该对象可能被丢弃，所以把要访问的对象注册到autoreleasepool中，那么在@autoreleasepool结束之前多能确保该对象存在。</p>
+
+<h3>属性</h3>
+
+<pre><code>      属性声明的属性                     所有权修饰符
+        assign                          _unsafe_unretained
+        copy                            _strong
+        retain                          _strong
+        strong                          _strong
+        unsafe_unretained               _unsafe_unretained
+        weak                            _weak
+</code></pre>
+
+<p>其中：
+assign：一般基本变量用该属性声明，eg:int BOOL</p>
+
+<p>copy：声明的变量是拷贝赋值源所生成的对象</p>
+
+<p>retain和strong表示意思相同</p>
+
+<p>strong：属性所声明的变量将成为对象的持有者</p>
+
+<p>unsafe_unretained：ios5之前的系统用该属性代替weak</p>
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
