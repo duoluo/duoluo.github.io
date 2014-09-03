@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ios | Wright's Blog]]></title>
   <link href="http://duoluo.github.io/blog/categories/ios/atom.xml" rel="self"/>
   <link href="http://duoluo.github.io/"/>
-  <updated>2014-09-03T21:59:25+08:00</updated>
+  <updated>2014-09-03T22:16:30+08:00</updated>
   <id>http://duoluo.github.io/</id>
   <author>
     <name><![CDATA[Wright]]></name>
@@ -157,6 +157,8 @@ assign：一般基本变量用该属性声明，eg:int BOOL</p>
 <p>strong：属性所声明的变量将成为对象的持有者</p>
 
 <p>unsafe_unretained：ios5之前的系统用该属性代替weak</p>
+
+<p><a href="http://www.yifeiyang.net/development-of-the-iphone-simply-1/">关于ARC认识很好的博文</a>,一个系列，值得一读。</p>
 ]]></content>
   </entry>
   
