@@ -114,5 +114,6 @@ strong：属性所声明的变量将成为对象的持有者
 
 unsafe_unretained：ios5之前的系统用该属性代替weak
 
+[关于ARC认识很好的博文](http://www.yifeiyang.net/development-of-the-iphone-simply-1/),一个系列，值得一读。
 	
 	
