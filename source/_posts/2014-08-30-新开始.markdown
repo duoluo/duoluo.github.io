@@ -1,0 +1,49 @@
+---
+layout: post
+title: "新开始"
+date: 2014-08-30 12:57:42 +0800
+comments: true
+categories: 生活
+---
+
+#利用github+octopress搭建自己的Blog
+
+说到Blog,自己也曾在CSDN和wordpress开过自己的Blog。但是，自觉文笔差劲，理解肤浅，每次想写什么的时候，最终逃不过一个结局--放弃。最近，自己在学习Ios开发，google的时候发现很多大大的blog的文章质量很高。发现他们不约而同的都使用了github+octopress。于是乎，我也产生了这个念头，一是觉得好玩，二是感觉做开发好多时候不把当时总结的知识记录下来，过后往往是飘到九霄云外了，所以决定开始自己的积累，三是希望通过bLog可以与更过的同行交流。It's all, 这个blog诞生了。
+
+
+###搭建过程中遇到的坑
+
+坑一：ssh -T git@github.com时提示如下：
+
+>  debug1: connect to address 207.97.227.239 port 22: Attempt to connect timed out without establishing a connection
+
+>  ssh: connect to host github.com port 22:
+
+解决方法：在~/.ssh/下新建config文件，内容如下：
+
+
+	Host github.com
+    User git
+    Hostname ssh.github.com
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/id_rsa
+    Port 443
+这个在windows和osx下搭建时都遇到过。
+
+坑二：由于我是现在一台window电脑上搭建了，然后想在另一台mac上写文章，更新blog，然后问题就来了，由于我以为只要git clone之后，就可以随意操作了，结果是错误的。一番google后，找到了如下[Clone Your Octopress to Blog From Two Places](http://blog.zerosharp.com/clone-your-octopress-to-blog-from-two-places/)文章。于是我step by step follow it。success!!。
+
+其实，把已存在blog部署到一台新机器上，与重新搭建一个octopress的过程差不多。
+而不是我想的那样。
+
+###新开始
+
+作为一个git, markdown新手，想要搭建还是很容易的。接下来就是写出更高质量的blog。而不是只肤浅的copy,paste,记录流水账
+
+好了，这就是新blog的第一篇。只要开始了就不算晚。
+
+
+	
+
+
+
+	
